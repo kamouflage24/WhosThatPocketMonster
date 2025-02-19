@@ -1,7 +1,7 @@
 package com.example.mobileappdev2025
 
+import android.nfc.Tag
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -10,12 +10,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import java.util.Random
 
 class MainActivity : AppCompatActivity() {
-    private var leftNum :Int = 0;
-    private var rightNum :Int = 0;
-    private var score :Int = 0;
+    private var leftNum: Int = 0;
+    private var rightNum: Int = 0;
+    private var submitOnClick: Boolean = false
+    private var nextOnClick: Boolean = false
+    private var topleftNum: Int = 0;
+    private var toprightNum: Int = 0;
+
+
+    private var score: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,52 +33,80 @@ class MainActivity : AppCompatActivity() {
         }
         // above init layout ui
 
-        pickRandomNumber()
+        pickName()
         setScore(0)
     }
 
-    fun leftButtonOnClick(view: View)
-    {
+    fun leftButtonOnClick(view: View) {
         if (leftNum > rightNum)
-            setScore(score+1)
+            setScore(score + 1)
         else
-            setScore(score-1)
+            setScore(score - 1)
 
-        pickRandomNumber()
     }
 
-    fun rightButtonOnClick(view: View)
-    {
+    fun rightButtonOnClick(view: View) {
         if (leftNum < rightNum)
-            setScore(score+1)
+            setScore(score + 1)
         else
-            setScore(score-1)
+            setScore(score - 1)
 
-        pickRandomNumber()
+
     }
 
-    fun pickRandomNumber()
-    {
-        var leftButton = findViewById<Button>(R.id.left_number_button)
-        var rightButton = findViewById<Button>(R.id.right_number_button)
+    fun submitOnClick(view: View) {
 
-        var rand = Random()
+        submitOnClick = true
 
-        do {
-            leftNum = rand.nextInt(10)
-            rightNum = rand.nextInt(10)
-        } while (leftNum == rightNum)
+        if (submitOnClick) {
+            findViewById<ImageView>(R.id.spegitto).visibility = View.VISIBLE;
+        } else {
+            findViewById<ImageView>(R.id.spegitto).visibility = View.INVISIBLE;
 
-        leftButton.text = "$leftNum"
-        rightButton.text = "$rightNum"
+            while (submitOnClick) {
+                if (submitOnClick) {
+                    submitOnClick = false
+                    findViewById<ImageView>(R.id.gravehound).visibility = View.INVISIBLE;
+                }
+            }
+        }
     }
+        // fun nextOnClick(view: View){
 
-    fun setScore(_score: Int)
-    {
-        score = _score;
+        // nextOnClick = true
 
-        findViewById<ImageView>(R.id.you_won_image).visibility = if (score > 5) View.VISIBLE else View.INVISIBLE;
+        //if (nextOnClick){
+        //     findViewById<ImageView>(R.id.gravehound).visibility =  View.VISIBLE;
+        // }
+        // else{
+        //   findViewById<ImageView>(R.id.gravehound).visibility = View.INVISIBLE;
 
-        findViewById<TextView>(R.id.score_text).text = "Score: $score"
-    }
+
+        // }
+        //  }
+
+        // }
+
+        fun pickName() {
+            var name_one = findViewById<Button>(R.id.Name_one)
+            var name_two = findViewById<Button>(R.id.name_two)
+            var name_third = findViewById<Button>(R.id.name_3)
+            var name_fourth = findViewById<Button>(R.id.name_4)
+
+
+            name_one.text = "rydon"
+            name_two.text = "pikachu"
+            name_third.text = "spigitto"
+            name_fourth.text = "swaddle"
+        }
+
+        fun setScore(_score: Int) {
+            score = _score;
+
+
+            //findViewById<ImageView>(R.id.you_win_image).visibility = if (score > 5) View.VISIBLE else View.INVISIBLE;
+
+            findViewById<TextView>(R.id.score_text).text = "Score: $score"
+        }
+
 }

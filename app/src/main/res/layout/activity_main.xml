@@ -11,46 +11,107 @@
         android:id="@+id/score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="556dp"
         android:text="Score: 0"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/left_number_button"
+        android:id="@+id/Name_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginBottom="256dp"
         android:onClick="leftButtonOnClick"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/right_number_button"
+        android:id="@+id/name_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="256dp"
         android:onClick="rightButtonOnClick"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/you_won_image"
-        android:layout_width="248dp"
-        android:layout_height="248dp"
-        android:layout_marginTop="120dp"
-        android:scaleType="centerInside"
-        android:visibility="invisible"
+    <Button
+        android:id="@+id/name_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="376dp"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/name_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="spegitto"
+        android:text="spegitto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/awesome_face" />
+        app:layout_constraintVertical_bias="0.55" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:onClick="submitOnClick"
+        android:text="submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/whos_that"
+        android:layout_width="383dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:text="Who's that pocketmon!!??"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/spegitto"
+        android:layout_width="315dp"
+        android:layout_height="281dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/whos_that"
+        app:layout_constraintVertical_bias="0.087"
+        app:srcCompat="@drawable/pocketmonster_2_"
+        tools:srcCompat="@drawable/pocketmonest_0_" />
+
+    <ImageView
+        android:id="@+id/gravehound"
+        android:layout_width="341dp"
+        android:layout_height="282dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.314"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/whos_that"
+        app:layout_constraintVertical_bias="0.106"
+        app:srcCompat="@drawable/pocketmonster_4_"
+        tools:srcCompat="@drawable/pocketsilo_4_" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
